@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f5c8b5c-4010-4e15-9b58-b5b05a9e9932" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/FarmController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/Farm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/FarmJob.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/FarmWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/Owner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repositories/FarmJobRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repositories/FarmRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repositories/FarmWorkerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repositories/OwnerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/FarmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/FarmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,8 +65,8 @@
     "ignore.virus.scanning.warn.message": "true",
     "ignore_missing_gitignore": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/IronHackJava/FarmControl",
-    "settings.editor.selected.configurable": "preferences.fileTypes"
+    "last_opened_file_path": "C:/IronHackJava/lab-java-intro-to-spring-boot-openbank-2025",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
