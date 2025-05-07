@@ -1,6 +1,6 @@
-package repositories;
+package com.example.demo.repositories;
 
-import models.FarmJob;
+import com.example.demo.models.FarmJob;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

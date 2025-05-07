@@ -1,6 +1,6 @@
-package repositories;
+package com.example.demo.repositories;
 
-import models.Owner;
+import com.example.demo.models.Owner;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

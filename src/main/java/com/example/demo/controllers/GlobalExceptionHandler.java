@@ -1,4 +1,4 @@
-package controllers;
+package com.example.demo.controllers;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;

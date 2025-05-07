@@ -1,12 +1,10 @@
-package repositories;
+package com.example.demo.repositories;
 
 
-import models.Farm;
-import models.FarmJob;
+import com.example.demo.models.Farm;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface FarmRepository extends JpaRepository<Farm, Long> {
     List<Farm> findByOwnerId(Long ownerId);

@@ -1,12 +1,12 @@
-package controllers;
+package com.example.demo.controllers;
 
 import jakarta.persistence.EntityNotFoundException;
-import models.Farm;
+import com.example.demo.models.Farm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import repositories.FarmRepository;
+import com.example.demo.repositories.FarmRepository;
 
 import java.util.List;
 

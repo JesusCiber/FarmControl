@@ -3,7 +3,7 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for AgroTrack" enabled="true">
+      <profile name="Annotation profile for FarmControl" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -14,7 +14,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="AgroTrack" target="21" />
+      <module name="FarmControl" target="21" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
