@@ -11,7 +11,7 @@ import com.example.demo.repositories.FarmRepository;
 import java.util.List;
 
 @RestController
-@RequestMapping("/farm")
+@RequestMapping("/api")
 public class FarmController {
 
     @Autowired
@@ -24,7 +24,6 @@ public class FarmController {
     }
 
 
-
     @GetMapping("/{id}")
     public ResponseEntity<Farm> getFarmById(@PathVariable Long id){
         Farm farm = farmRepository.findById(id)
@@ -33,7 +32,7 @@ public class FarmController {
         return ResponseEntity.ok(farm);
     }
 
-    @PostMapping
+    @PostMapping("/{id}")
     public Farm createFarm(@RequestBody Farm farm){
         return farmRepository.save(farm);
 
