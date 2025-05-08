@@ -7,9 +7,10 @@ import lombok.*;
 
 @Entity
 @Data
-@EqualsAndHashCode(callSuper = true) // Considera los atributos de la clase heredada
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@PrimaryKeyJoinColumn(name = "user_id")
 public class Owner extends User{
     private String type; // Individual, Company, etc.
 }
