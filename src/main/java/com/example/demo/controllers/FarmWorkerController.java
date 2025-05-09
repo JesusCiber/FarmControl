@@ -1,8 +1,7 @@
 package com.example.demo.controllers;
 
 import com.example.demo.models.FarmWorker;
-import com.example.demo.repositories.FarmWorkerRepository;
-import jakarta.persistence.EntityNotFoundException;
+import com.example.demo.services.FarmWorkerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,40 +13,47 @@ import java.util.List;
 public class FarmWorkerController {
 
     @Autowired
-    private FarmWorkerRepository farmWorkerRepository;
+    private FarmWorkerService farmWorkerService;
 
     @GetMapping
-    public List<FarmWorker> getAllFarmWorkers() {
-        return farmWorkerRepository.findAll();
+    public ResponseEntity<List<FarmWorker>> getAllFarmWorkers() {
+        return ResponseEntity.ok(farmWorkerService.getAllFarmWorkers());
     }
 
+    // GET workers by farm ID
+    @GetMapping("/farm/{farmId}")
+    public ResponseEntity<List<FarmWorker>> getWorkersByFarmId(@PathVariable Long farmId) {
+        return ResponseEntity.ok(farmWorkerService.getWorkersByFarmId(farmId));
+    }
+
+
+
+    // GET worker by ID
     @GetMapping("/{id}")
     public ResponseEntity<FarmWorker> getFarmWorkerById(@PathVariable Long id) {
-        FarmWorker worker = farmWorkerRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("FarmWorker with ID " + id + " not found"));
-        return ResponseEntity.ok(worker);
+        return ResponseEntity.ok(farmWorkerService.getFarmWorkerById(id));
     }
 
+
+    // POST create worker
     @PostMapping
-    public FarmWorker createFarmWorker(@RequestBody FarmWorker worker) {
-        return farmWorkerRepository.save(worker);
+    public ResponseEntity<FarmWorker> createFarmWorker(@RequestBody FarmWorker worker) {
+        return ResponseEntity.ok(farmWorkerService.createFarmWorker(worker));
     }
 
+
+    // PUT update worker
     @PutMapping("/{id}")
     public ResponseEntity<FarmWorker> updateFarmWorker(@PathVariable Long id, @RequestBody FarmWorker updatedWorker) {
-        FarmWorker worker = farmWorkerRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("FarmWorker with ID " + id + " not found"));
-        worker.setName(updatedWorker.getName());
-        worker.setJobType(updatedWorker.getJobType());
-
-        return ResponseEntity.ok(farmWorkerRepository.save(worker));
+        return ResponseEntity.ok(farmWorkerService.updateFarmWorker(id, updatedWorker));
     }
 
+
+    // DELETE worker
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteFarmWorker(@PathVariable Long id) {
-        FarmWorker worker = farmWorkerRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("FarmWorker with ID " + id + " not found"));
-        farmWorkerRepository.delete(worker);
+        farmWorkerService.deleteFarmWorker(id);
         return ResponseEntity.noContent().build();
     }
+
 }
