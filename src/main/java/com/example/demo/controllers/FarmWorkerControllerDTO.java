@@ -1,5 +1,6 @@
-package com.example.demo.DTO;
+package com.example.demo.controllers;
 
+import com.example.demo.DTO.FarmWorkerDTO;
 import com.example.demo.services.FarmWorkerServiceDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

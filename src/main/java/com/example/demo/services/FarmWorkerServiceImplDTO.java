@@ -19,7 +19,7 @@ public class FarmWorkerServiceImplDTO implements FarmWorkerServiceDTO {
     @Override
     public List<FarmWorkerDTO> getAllFarmWorkers() {
         return farmWorkerRepository.findAll().stream()
-                .map(worker -> new FarmWorkerDTO(worker)) // Expresión lambda en lugar de `::new`
+                .map(worker -> new FarmWorkerDTO(worker))
                 .collect(Collectors.toList());
     }
 
@@ -68,6 +68,8 @@ public class FarmWorkerServiceImplDTO implements FarmWorkerServiceDTO {
         if (workers.isEmpty()) {
             throw new EntityNotFoundException("No workers found for farm ID: " + farmId);
         }
-        return workers.stream().map(FarmWorkerDTO::new).collect(Collectors.toList());
+        return workers.stream()
+                .map(worker -> new FarmWorkerDTO(worker))
+                .collect(Collectors.toList());
     }
 }

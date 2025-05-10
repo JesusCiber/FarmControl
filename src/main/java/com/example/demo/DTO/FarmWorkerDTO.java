@@ -10,15 +10,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class FarmWorkerDTO {
-    private Long id;
+    private Long userId;
     private String name;
     private String phoneNumber;
     private String email;
     private String jobType;
     private Long farmId;
 
+
     public FarmWorkerDTO(FarmWorker worker) {
-        this.id = worker.getId();
+        this.userId = worker.getId();
         this.name = worker.getName();
         this.phoneNumber = worker.getPhoneNumber();
         this.email = worker.getEmail();
