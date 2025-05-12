@@ -38,7 +38,7 @@ public class FarmControllerDTO {
     }
 
 
-    @PostMapping("/{id}")
+    @PostMapping()
     public ResponseEntity<FarmDTO> createFarm(@RequestBody FarmDTO farmDTO){
         return new ResponseEntity<>(farmServiceDTO.createFarm(farmDTO), HttpStatus.CREATED);
     }

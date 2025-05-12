@@ -10,6 +10,5 @@ public interface FarmJobServiceDTO {
     FarmJobDTO createFarmJob(FarmJobDTO farmJobDTO);
     FarmJobDTO updateFarmJob(Long id, FarmJobDTO updatedFarmJobDTO);
     void deleteFarmJob(Long id);
-    List<FarmJobDTO> getJobsByFarmId(Long farmId);
-    List<FarmJobDTO> getJobsByFarmIdAndLocation(Long farmId, String location);
+
 }

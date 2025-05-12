@@ -5,17 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f5c8b5c-4010-4e15-9b58-b5b05a9e9932" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/Controller/FarmControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/Controller/OwnerControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/FarmController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/FarmDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/FarmDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/FarmControllerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/FarmControllerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/FarmJobController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/FarmJobControllerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/FarmJobControllerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/FarmWorkerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/OwnerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/FarmService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/FarmServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/FarmWorkerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/FarmWorkerServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/OwnerControllerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/OwnerControllerDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/Farm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/Farm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/Owner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/OwnerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/OwnerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/FarmJobServiceDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/FarmJobServiceDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/FarmJobServiceImplDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/FarmJobServiceImplDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/FarmServiceImplDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/FarmServiceImplDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/OwnerServiceImplDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/OwnerServiceImplDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,9 +70,19 @@
   "keyToString": {
     "Application.AgroTrackApplication.executor": "Run",
     "Application.FarmControlApplication.executor": "Run",
+    "JUnit.FarmControllerTest (1).executor": "Run",
+    "JUnit.FarmControllerTest.CreatedFarm.executor": "Run",
+    "JUnit.FarmControllerTest.createFarm.executor": "Run",
+    "JUnit.FarmControllerTest.createFarm_Valid_ReturnsCreatedFarm.executor": "Run",
+    "JUnit.FarmControllerTest.executor": "Run",
+    "JUnit.FarmControllerTest.getAll_Valid_ReturnsFarms.executor": "Run",
+    "JUnit.FarmControllerTest.store_Valid_Created.executor": "Run",
+    "JUnit.FarmControllerTest.testGetAllFarms.executor": "Run",
+    "JUnit.OwnerControllerTest.OwnerCreated.executor": "Run",
+    "JUnit.OwnerControllerTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "services",
+    "git-widget-placeholder": "test",
     "ignore.virus.scanning.warn.message": "true",
     "ignore_missing_gitignore": "true",
     "kotlin-language-version-configured": "true",
@@ -84,6 +97,96 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.demo" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="FarmControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo.Controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.Controller.FarmControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FarmControllerTest.createFarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo.Controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.Controller.FarmControllerTest" />
+      <option name="METHOD_NAME" value="createFarm" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FarmControllerTest.createFarm_Valid_ReturnsCreatedFarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo.Controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.Controller.FarmControllerTest" />
+      <option name="METHOD_NAME" value="createFarm_Valid_ReturnsCreatedFarm" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FarmControllerTest.store_Valid_Created" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo.Controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.Controller.FarmControllerTest" />
+      <option name="METHOD_NAME" value="store_Valid_Created" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerControllerTest.OwnerCreated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo.Controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.Controller.OwnerControllerTest" />
+      <option name="METHOD_NAME" value="OwnerCreated" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.OwnerControllerTest.OwnerCreated" />
+        <item itemvalue="JUnit.FarmControllerTest.store_Valid_Created" />
+        <item itemvalue="JUnit.FarmControllerTest (1)" />
+        <item itemvalue="JUnit.FarmControllerTest.createFarm" />
+        <item itemvalue="JUnit.FarmControllerTest.createFarm_Valid_ReturnsCreatedFarm" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

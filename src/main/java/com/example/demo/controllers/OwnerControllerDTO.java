@@ -41,7 +41,7 @@ public class OwnerControllerDTO {
 
     @PostMapping
     public ResponseEntity<OwnerDTO> createOwner(@RequestBody OwnerDTO ownerDTO) {
-        return ResponseEntity.ok(ownerServiceDTO.createOwner(ownerDTO));
+        return ResponseEntity.status(HttpStatus.CREATED).body(ownerServiceDTO.createOwner(ownerDTO));
     }
 
     @PutMapping("/{id}")

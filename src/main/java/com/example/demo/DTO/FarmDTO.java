@@ -12,10 +12,13 @@ public class FarmDTO {
     private Long id;
     private String name;
     private String location;
+    private Long ownerId;
 
     public FarmDTO(Farm farm) {
         this.id = farm.getId();
         this.name = farm.getName();
         this.location = farm.getLocation();
+        this.ownerId = farm.getOwner().getId();
     }
+
 }
