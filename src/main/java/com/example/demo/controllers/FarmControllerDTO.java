@@ -1,8 +1,6 @@
 package com.example.demo.controllers;
 
 import com.example.demo.DTO.FarmDTO;
-import com.example.demo.models.Farm;
-import com.example.demo.services.FarmService;
 import com.example.demo.services.FarmServiceDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
