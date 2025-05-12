@@ -27,10 +27,10 @@ public class Farm {
     @JoinColumn(name = "owner_id")
     private Owner owner;
 
-    @OneToMany(mappedBy = "farm")
+    @OneToMany(mappedBy = "farm", cascade = CascadeType.ALL)
     private List<FarmWorker> workers;
 
-    @OneToMany(mappedBy = "farm")
+    @OneToMany(mappedBy = "farm", cascade = CascadeType.ALL)
     private List<FarmJob> jobs;
 
 }

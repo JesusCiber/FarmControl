@@ -4,6 +4,7 @@ import com.example.demo.DTO.OwnerDTO;
 import com.example.demo.models.Owner;
 import com.example.demo.repositories.OwnerRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,6 +27,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 @SpringBootTest
 @AutoConfigureMockMvc
+@Transactional
 public class OwnerControllerTest {
 
     @Autowired
@@ -56,7 +58,7 @@ public class OwnerControllerTest {
     }
 
     @Test
-    void OwnerCreated() throws Exception {
+    void OwnerCreatedTest() throws Exception {
         OwnerDTO ownerDTO = new OwnerDTO(null, "John Doe", "987654321", "john@example.com", new ArrayList<>());
         String requestBody = objectMapper.writeValueAsString(ownerDTO);
 
@@ -71,7 +73,7 @@ public class OwnerControllerTest {
 
 
     @Test
-    void getAllOwners() throws Exception {
+    void getAllOwnersTest() throws Exception {
         Owner owner1 = new Owner(null, "Alice", "555555555", "alice@example.com", "password123", "Individual", new ArrayList<>());
         Owner owner2 = new Owner(null, "Bob", "444444444", "bob@example.com", "password123", "Company", new ArrayList<>());
         ownerRepository.saveAll(List.of(owner1, owner2));
@@ -87,7 +89,7 @@ public class OwnerControllerTest {
 
 
     @Test
-    void updateOwner_Valid_OwnerUpdated() throws Exception {
+    void updateOwnerTest() throws Exception {
         OwnerDTO updatedOwnerDTO = new OwnerDTO(testOwner.getId(), "Updated Owner", "999999999", "updated@example.com", new ArrayList<>());
         String requestBody = objectMapper.writeValueAsString(updatedOwnerDTO);
 
@@ -104,7 +106,7 @@ public class OwnerControllerTest {
     }
 
     @Test
-    void deleteOwner_Valid_OwnerDeleted() throws Exception {
+    void deleteOwnerTest() throws Exception {
         mockMvc.perform(delete("/api/owner-dto/" + testOwner.getId()))
                 .andExpect(MockMvcResultMatchers.status().isNoContent());
 

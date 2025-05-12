@@ -6,6 +6,7 @@ import com.example.demo.models.Owner;
 import com.example.demo.repositories.FarmRepository;
 import com.example.demo.repositories.OwnerRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,6 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
+@Transactional
 public class FarmControllerTest {
 
 
