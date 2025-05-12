@@ -94,7 +94,7 @@
       <recent name="com.example.demo" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OwnerServiceImplDTOTest">
+  <component name="RunManager">
     <configuration name="FarmControllerUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
