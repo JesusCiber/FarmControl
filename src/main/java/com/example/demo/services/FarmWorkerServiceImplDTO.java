@@ -1,6 +1,8 @@
 package com.example.demo.services;
 
+import com.example.demo.DTO.FarmDTO;
 import com.example.demo.DTO.FarmWorkerDTO;
+import com.example.demo.DTO.OwnerDTO;
 import com.example.demo.models.FarmWorker;
 import com.example.demo.repositories.FarmWorkerRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -16,7 +18,7 @@ public class FarmWorkerServiceImplDTO implements FarmWorkerServiceDTO {
     @Autowired
     private FarmWorkerRepository farmWorkerRepository;
 
-    @Override
+   @Override
     public List<FarmWorkerDTO> getAllFarmWorkers() {
         return farmWorkerRepository.findAll().stream()
                 .map(worker -> new FarmWorkerDTO(worker))
@@ -72,4 +74,6 @@ public class FarmWorkerServiceImplDTO implements FarmWorkerServiceDTO {
                 .map(worker -> new FarmWorkerDTO(worker))
                 .collect(Collectors.toList());
     }
+
+
 }

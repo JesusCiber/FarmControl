@@ -1,4 +1,4 @@
-package com.example.demo.Controller;
+package com.example.demo.Integration.Controller;
 
 import com.example.demo.DTO.FarmDTO;
 import com.example.demo.models.Farm;

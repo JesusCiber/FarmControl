@@ -1,66 +1,58 @@
-package com.example.demo.Controller;
+package com.example.demo.unitTest.Controller;
 
 import com.example.demo.DTO.OwnerDTO;
-import com.example.demo.models.Owner;
-import com.example.demo.repositories.OwnerRepository;
+import com.example.demo.controllers.OwnerControllerDTO;
+import com.example.demo.services.OwnerServiceDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.transaction.Transactional;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
-@SpringBootTest
-@AutoConfigureMockMvc
-@Transactional
-public class OwnerControllerTest {
+@ExtendWith(MockitoExtension.class)
+public class OwnerControllerUnitTest {
 
-    @Autowired
-    private WebApplicationContext webApplicationContext;
+    @Mock
+    private OwnerServiceDTO ownerService;
 
-    @Autowired
+    @InjectMocks
+    private OwnerControllerDTO ownerController;
+
     private MockMvc mockMvc;
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    @Autowired
-    private OwnerRepository ownerRepository;
-
-    private Owner testOwner;
-
     @BeforeEach
     public void setUp() {
-        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-
-        ownerRepository.deleteAll();
-
-        testOwner = new Owner(null, "Test Owner", "123456789", "testowner@example.com", "password", "Individual", new ArrayList<>());
-        testOwner = ownerRepository.save(testOwner);
-    }
-
-    @AfterEach
-    public void tearDown() {
-        ownerRepository.deleteAll();
+        MockitoAnnotations.openMocks(this);
+        mockMvc = MockMvcBuilders.standaloneSetup(ownerController).build();
     }
 
     @Test
-    void OwnerCreatedTest() throws Exception {
+    void ownerCreatedTest() throws Exception {
         OwnerDTO ownerDTO = new OwnerDTO(null, "John Doe", "987654321", "john@example.com", new ArrayList<>());
         String requestBody = objectMapper.writeValueAsString(ownerDTO);
+
+        when(ownerService.createOwner(any(OwnerDTO.class)))
+                .thenReturn(new OwnerDTO(1L, "John Doe", "987654321", "john@example.com", new ArrayList<>()));
 
         MvcResult result = mockMvc.perform(post("/api/owner-dto")
                         .content(requestBody)
@@ -71,12 +63,14 @@ public class OwnerControllerTest {
         assertTrue(result.getResponse().getContentAsString().contains("John Doe"));
     }
 
-
     @Test
     void getAllOwnersTest() throws Exception {
-        Owner owner1 = new Owner(null, "Alice", "555555555", "alice@example.com", "password123", "Individual", new ArrayList<>());
-        Owner owner2 = new Owner(null, "Bob", "444444444", "bob@example.com", "password123", "Company", new ArrayList<>());
-        ownerRepository.saveAll(List.of(owner1, owner2));
+        List<OwnerDTO> mockOwners = List.of(
+                new OwnerDTO(1L, "Alice", "555555555", "alice@example.com", new ArrayList<>()),
+                new OwnerDTO(2L, "Bob", "444444444", "bob@example.com", new ArrayList<>())
+        );
+
+        when(ownerService.getAllOwners()).thenReturn(mockOwners);
 
         MvcResult result = mockMvc.perform(get("/api/owner-dto"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
@@ -87,18 +81,22 @@ public class OwnerControllerTest {
         assertTrue(result.getResponse().getContentAsString().contains("Bob"));
     }
 
-
     @Test
     void updateOwnerTest() throws Exception {
-        OwnerDTO updatedOwnerDTO = new OwnerDTO(testOwner.getId(), "Updated Owner", "999999999", "updated@example.com", new ArrayList<>());
+        OwnerDTO updatedOwnerDTO = new OwnerDTO(1L, "Updated Owner", "999999999", "updated@example.com", new ArrayList<>());
         String requestBody = objectMapper.writeValueAsString(updatedOwnerDTO);
 
-        mockMvc.perform(put("/api/owner-dto/" + testOwner.getId())
+        when(ownerService.updateOwner(eq(1L), any(OwnerDTO.class))).thenReturn(updatedOwnerDTO);
+
+        mockMvc.perform(put("/api/owner-dto/1")
                         .content(requestBody)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk());
 
-        MvcResult result = mockMvc.perform(get("/api/owner-dto/" + testOwner.getId()))
+        // Opcional: este GET también debe estar simulado si esperas algo en la respuesta
+        when(ownerService.getOwnerById(1L)).thenReturn(updatedOwnerDTO);
+
+        MvcResult result = mockMvc.perform(get("/api/owner-dto/1"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andReturn();
 
@@ -107,8 +105,13 @@ public class OwnerControllerTest {
 
     @Test
     void deleteOwnerTest() throws Exception {
-        mockMvc.perform(delete("/api/owner-dto/" + testOwner.getId()))
+        doNothing().when(ownerService).deleteOwner(1L);
+
+        mockMvc.perform(delete("/api/owner-dto/1"))
                 .andExpect(MockMvcResultMatchers.status().isNoContent());
+
+        // Este GET también debe ser simulado si esperas una lista vacía
+        when(ownerService.getAllOwners()).thenReturn(new ArrayList<>());
 
         MvcResult result = mockMvc.perform(get("/api/owner-dto"))
                 .andReturn();

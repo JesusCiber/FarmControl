@@ -26,4 +26,6 @@ public class FarmWorkerDTO {
         this.jobType = worker.getJobType();
         this.farmId = (worker.getFarm() != null) ? worker.getFarm().getId() : null;
     }
+
+
 }

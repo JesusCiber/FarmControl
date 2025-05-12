@@ -23,4 +23,5 @@ public class Owner extends User{
         this.type = type;
         this.farm = farm;
     }
+
 }

@@ -10,3 +10,4 @@ The backend is built with Java and Spring Boot following RESTful best practices.
 
 ## Class Diagram
 ![Diagrama UML.png](src/main/resources/images/Diagrama%20UML.png)
+
