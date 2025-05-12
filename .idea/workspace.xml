@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f5c8b5c-4010-4e15-9b58-b5b05a9e9932" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/unitTest/Controller/FarmControllerUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/unitTest/Controller/OwnerControllerUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/unitTest/Service/FarmServiceImplDTOTest .java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/unitTest/Service/OwnerServiceImplDTOTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/FarmWorkerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/FarmWorkerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/Owner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/FarmWorkerServiceImplDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/FarmWorkerServiceImplDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/Controller/FarmControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/Integration/Controller/FarmControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/Controller/FarmWorkerControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/Controller/OwnerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/Integration/Controller/OwnerControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/Controller/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/Integration/Controller/UserControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/unitTest/Service/FarmServiceImplDTOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/unitTest/Service/FarmServiceImplDTOTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +74,7 @@
     "JUnit.OwnerControllerTest.OwnerCreated.executor": "Run",
     "JUnit.OwnerControllerTest.executor": "Run",
     "JUnit.OwnerControllerUnitTest.executor": "Run",
+    "JUnit.OwnerServiceImplDTOTest.executor": "Run",
     "JUnit.UserControllerTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -103,7 +94,7 @@
       <recent name="com.example.demo" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FarmServiceImplDTOTest">
+  <component name="RunManager" selected="JUnit.OwnerServiceImplDTOTest">
     <configuration name="FarmControllerUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
@@ -115,22 +106,6 @@
       <option name="PACKAGE_NAME" value="com.example.demo.unitTest.Controller" />
       <option name="MAIN_CLASS_NAME" value="com.example.demo.unitTest.Controller.FarmControllerUnitTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FarmRepositoryTestInt.testSaveFarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.Integration.Controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.Integration" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.Integration.FarmRepositoryTestInt" />
-      <option name="METHOD_NAME" value="testSaveFarm" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -180,13 +155,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OwnerServiceImplDTOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.unitTest.Service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo.unitTest.Service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.unitTest.Service.OwnerServiceImplDTOTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OwnerServiceImplDTOTest" />
         <item itemvalue="JUnit.FarmServiceImplDTOTest" />
         <item itemvalue="JUnit.FarmServiceTest" />
         <item itemvalue="JUnit.OwnerControllerUnitTest" />
         <item itemvalue="JUnit.FarmControllerUnitTest" />
-        <item itemvalue="JUnit.FarmRepositoryTestInt.testSaveFarm" />
       </list>
     </recent_temporary>
   </component>

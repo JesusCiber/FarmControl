@@ -93,7 +93,7 @@ public class OwnerControllerUnitTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk());
 
-        // Opcional: este GET también debe estar simulado si esperas algo en la respuesta
+        // Opcional: este GET también debe estar simulado si se espera algo en la respuesta
         when(ownerService.getOwnerById(1L)).thenReturn(updatedOwnerDTO);
 
         MvcResult result = mockMvc.perform(get("/api/owner-dto/1"))
@@ -110,7 +110,7 @@ public class OwnerControllerUnitTest {
         mockMvc.perform(delete("/api/owner-dto/1"))
                 .andExpect(MockMvcResultMatchers.status().isNoContent());
 
-        // Este GET también debe ser simulado si esperas una lista vacía
+        // Este GET también debe ser simulado si se espera una lista vacía
         when(ownerService.getAllOwners()).thenReturn(new ArrayList<>());
 
         MvcResult result = mockMvc.perform(get("/api/owner-dto"))

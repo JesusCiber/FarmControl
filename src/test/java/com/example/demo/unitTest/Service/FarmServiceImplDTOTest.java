@@ -39,7 +39,7 @@ class FarmServiceImplDTOTest {
 
     @Test
     void testGetAllFarms() {
-        Owner owner = new Owner(1L, "Juan", "juan@example.com", "pass123", "12345678A", null);
+        Owner owner = new Owner(1L, "Ana", "123456789", "ana@mail.com", "pass", "Individual", null);
         Farm farm1 = new Farm(1L, "Finca A", "Madrid", owner, null, null);
         Farm farm2 = new Farm(2L, "Finca B", "Toledo", owner, null, null);
 
@@ -73,7 +73,7 @@ class FarmServiceImplDTOTest {
 
     @Test
     void testCreateFarm() {
-        Owner owner = new Owner(1L, "Ana", "ana@mail.com", "pass", "98765432Z", null);
+        Owner owner = new Owner(1L, "Ana", "123456789", "ana@mail.com", "pass", "Individual", null);
         FarmDTO inputDTO = new FarmDTO(null, "Nueva Finca", "Valencia", 1L);
         Farm savedFarm = new Farm(1L, "Nueva Finca", "Valencia", owner, null, null);
 
