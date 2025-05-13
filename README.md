@@ -1,13 +1,82 @@
-# Farm Control
+# 🌱 Farm Control API
 
 ## Project Description
 
-This application allows the management of agricultural farms, their owners, workers, and job assignments. There are two main user types: farm owners and farm workers.
+This project is a **REST API** for  farms, owners, workers, and job assignments. It allows CRUD operations on farms and their related entities while ensuring proper data validation and business logic enforcement.
 
-Each owner can manage multiple farms, and each farm can have multiple workers and assigned jobs. The system enables registering users, managing farms, and organizing work assignments in a structured way.
+The API is built using **Spring Boot**, **Java**, and follows a microservices approach to ensure scalability.
 
-The backend is built with Java and Spring Boot following RESTful best practices. Authentication is implemented using JWT Bearer tokens, and the application uses a MySQL database to persist data.
 
 ## Class Diagram
 ![Diagrama UML.png](src/main/resources/images/Diagrama%20UML.png)
 
+## ⚙️ Setup
+### ** Clone the Repository**
+git clone https://github.com/JesusCiber/FarmControl
+
+### ✅ Requirements
+- Java 21
+- Maven
+- MySQL Server
+- Postman or similar for testing the API
+
+
+### Configure the Database
+Modify `application.properties`
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/"YOUR_DATABASE_NAME"
+spring.datasource.username="your_username"
+spring.datasource.password="your_password"
+```
+
+### 🛠 Technologies Used
+#### - Java 21
+
+#### - Spring Boot 3
+
+#### - Spring Data JPA
+
+#### - Spring Security (Pending Implementation)
+
+#### - JUnit 5 & Mockito (for testing)
+
+#### - MySQL (for persistence)
+
+
+## 🛣 Controllers and Routes structure
+### 📌 FarmController
+
+![img.png](src/main/resources/images/img.png)
+
+### 📌 OwnerController
+
+![img_1.png](src/main/resources/images/img_1.png)
+
+### 📌 FarmWorkerController
+
+![img_2.png](src/main/resources/images/img_2.png)
+
+### 📌 FarmJobController
+
+![img_3.png](src/main/resources/images/img_3.png)
+
+
+### 🔗 Extra links
+- 
+
+
+
+### 🔮 Future Work
+#### 🚀 Planned features for future releases:
+
+- **JWT (JSON Web Tokens)** → Secure user authentication without stateful sessions.
+- **Role-Based Access Control (RBAC)** → `ADMIN`, `OWNER`, `WORKER` roles for controlled access.
+- **BCrypt Password Encryption** → Secure user credentials storage.
+- **Spring Security Filters** → API protection and request validation.
+
+
+### 📚 Resources
+- **[Spring Boot Documentation](https://spring.io/projects/spring-boot)** 
+- **[JUnit 5 Testing Guide](https://junit.org/junit5/docs/current/user-guide/)**
+- **[Mockito Documentation](https://site.mockito.org/)**
