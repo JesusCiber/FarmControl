@@ -7,14 +7,6 @@
     <list default="true" id="9f5c8b5c-4010-4e15-9b58-b5b05a9e9932" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/UserControllerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/UserControllerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/FarmWorkerServiceImplDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/FarmWorkerServiceImplDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/UserServiceImplDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/UserServiceImplDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/Integration/Controller/FarmControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/Integration/Controller/FarmControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/Integration/Controller/OwnerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/Integration/Controller/OwnerControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/Integration/Controller/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/Integration/Controller/UserControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/unitTest/Controller/OwnerControllerUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/unitTest/Controller/OwnerControllerUnitTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +79,7 @@
     "JUnit.demo in demo.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "test",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "ignore_missing_gitignore": "true",
     "kotlin-language-version-configured": "true",
@@ -182,10 +174,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FarmControllerTest" />
         <item itemvalue="JUnit.OwnerServiceImplDTOTest" />
         <item itemvalue="JUnit.FarmServiceImplDTOTest" />
         <item itemvalue="JUnit.OwnerControllerUnitTest" />
-        <item itemvalue="JUnit.FarmControllerTest" />
         <item itemvalue="JUnit.OwnerControllerTest" />
       </list>
     </recent_temporary>
