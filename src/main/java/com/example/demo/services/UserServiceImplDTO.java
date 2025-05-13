@@ -19,7 +19,7 @@ public class UserServiceImplDTO implements UserServiceDTO {
     private UserRepository userRepository;
 
     public UserDTO createUser(UserDTO userDTO) {
-        User user = new User(null, userDTO.getName(), userDTO.getPhoneNumber(), userDTO.getEmail(), "hashed-password");
+        User user = new User(null, userDTO.getName(), userDTO.getPhoneNumber(), userDTO.getEmail(), " ");
         User savedUser = userRepository.save(user);
         return new UserDTO(savedUser.getId(), savedUser.getName(), savedUser.getEmail(), savedUser.getPhoneNumber());
     }

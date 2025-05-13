@@ -23,22 +23,23 @@ public class UserControllerTest {
 
     @Test
     public void testCreateUser() {
-        User user = new User(null, "Alice Johnson", "555-1234", "alice@example.com", "securePass123");
+        User user = new User(null, "Test user", "555-1234", "Test@gmail.com", "securePass123");
         User savedUser = userRepository.save(user);
 
         assertNotNull(savedUser.getId()); // Verifica que el ID fue generado
-        assertEquals("Alice Johnson", savedUser.getName()); // Verifica el nombre
-        assertEquals("alice@example.com", savedUser.getEmail()); // Verifica el email
+        assertEquals("Test user", savedUser.getName()); // Verifica el nombre
+        assertEquals("Test@gmail.com", savedUser.getEmail()); // Verifica el email
     }
 
     @Test
     public void testFindUserByEmail() {
-        User user = new User(null, "Bob Smith", "555-5678", "bob@example.com", "password456");
+        User user = new User(null, "Test User", "555-5678", "user@gmail.com", "password456");
         userRepository.save(user);
 
-        Optional<User> foundUser = userRepository.findByEmail("bob@example.com");
+        Optional<User> foundUser = userRepository.findByEmail("user@gmail.com");
 
         assertTrue(foundUser.isPresent()); // Verifica que el usuario fue encontrado
-        assertEquals("Bob Smith", foundUser.get().getName()); // Compara el nombre
+        assertEquals("Test User", foundUser.get().getName()); // Compara el nombre
     }
+
 }

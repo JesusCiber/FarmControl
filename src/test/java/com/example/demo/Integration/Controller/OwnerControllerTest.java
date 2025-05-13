@@ -1,7 +1,9 @@
 package com.example.demo.Integration.Controller;
 
 import com.example.demo.DTO.OwnerDTO;
+import com.example.demo.models.Farm;
 import com.example.demo.models.Owner;
+import com.example.demo.repositories.FarmRepository;
 import com.example.demo.repositories.OwnerRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.transaction.Transactional;
@@ -40,26 +42,36 @@ public class OwnerControllerTest {
     @Autowired
     private OwnerRepository ownerRepository;
 
+    @Autowired
+    private FarmRepository farmRepository;
+
     private Owner testOwner;
 
     @BeforeEach
     public void setUp() {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 
-        ownerRepository.deleteAll();
-
         testOwner = new Owner(null, "Test Owner", "123456789", "testowner@example.com", "password", "Individual", new ArrayList<>());
         testOwner = ownerRepository.save(testOwner);
     }
 
     @AfterEach
-    public void tearDown() {
-        ownerRepository.deleteAll();
+    public void cleanUp() {
+        // Eliminar farms asociadas antes de eliminar el owner
+        List<Farm> farms = farmRepository.findByOwnerId(testOwner.getId());
+        for (Farm farm : farms) {
+            farmRepository.deleteById(farm.getId());
+        }
+
+        // Eliminar el owner
+        if (ownerRepository.existsById(testOwner.getId())) {
+            ownerRepository.deleteById(testOwner.getId());
+        }
     }
 
     @Test
     void OwnerCreatedTest() throws Exception {
-        OwnerDTO ownerDTO = new OwnerDTO(null, "John Doe", "987654321", "john@example.com", new ArrayList<>());
+        OwnerDTO ownerDTO = new OwnerDTO(null, "TestOwner", "987654321", "testowner@gmail.com", new ArrayList<>());
         String requestBody = objectMapper.writeValueAsString(ownerDTO);
 
         MvcResult result = mockMvc.perform(post("/api/owner-dto")
@@ -68,7 +80,7 @@ public class OwnerControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isCreated())
                 .andReturn();
 
-        assertTrue(result.getResponse().getContentAsString().contains("John Doe"));
+        assertTrue(result.getResponse().getContentAsString().contains("TestOwner"));
     }
 
 

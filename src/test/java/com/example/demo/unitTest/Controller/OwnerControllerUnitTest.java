@@ -48,11 +48,11 @@ public class OwnerControllerUnitTest {
 
     @Test
     void ownerCreatedTest() throws Exception {
-        OwnerDTO ownerDTO = new OwnerDTO(null, "John Doe", "987654321", "john@example.com", new ArrayList<>());
+        OwnerDTO ownerDTO = new OwnerDTO(null, "Test owner", "987654321", "Testowner@example.com", new ArrayList<>());
         String requestBody = objectMapper.writeValueAsString(ownerDTO);
 
         when(ownerService.createOwner(any(OwnerDTO.class)))
-                .thenReturn(new OwnerDTO(1L, "John Doe", "987654321", "john@example.com", new ArrayList<>()));
+                .thenReturn(new OwnerDTO(1L, "Test owner", "987654321", "Testowner@example.com", new ArrayList<>()));
 
         MvcResult result = mockMvc.perform(post("/api/owner-dto")
                         .content(requestBody)
@@ -60,7 +60,7 @@ public class OwnerControllerUnitTest {
                 .andExpect(MockMvcResultMatchers.status().isCreated())
                 .andReturn();
 
-        assertTrue(result.getResponse().getContentAsString().contains("John Doe"));
+        assertTrue(result.getResponse().getContentAsString().contains("Test owner"));
     }
 
     @Test

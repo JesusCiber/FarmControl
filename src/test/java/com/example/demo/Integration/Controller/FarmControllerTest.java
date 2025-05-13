@@ -48,12 +48,14 @@ public class FarmControllerTest {
 
     private Owner testOwner;
 
+    private final List<Farm> createdFarms = new ArrayList<>();
+
+
     @BeforeEach
     public void setUp() {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-
-        farmRepository.deleteAll();
-        ownerRepository.deleteAll();
+        //farmRepository.deleteAll();
+        //ownerRepository.deleteAll();
 
         // Crear y guardar un único Owner de prueba para todos los tests
         testOwner = new Owner(null, "Test Owner", "123456789", "testowner@example.com", "password", "Individual", new ArrayList<>());
@@ -61,9 +63,16 @@ public class FarmControllerTest {
     }
 
     @AfterEach
-    public void tearDown() {
-        farmRepository.deleteAll();
-        ownerRepository.deleteAll();
+    public void cleanUp() {
+        //Eliminamos la farm Creada
+        for (Farm farm : createdFarms) {
+            farmRepository.deleteById(farm.getId());
+        }
+
+        // Elimina el owner
+        if (farmRepository.findByOwnerId(testOwner.getId()).isEmpty()) {
+            ownerRepository.deleteById(testOwner.getId());
+        }
     }
 
     @Test

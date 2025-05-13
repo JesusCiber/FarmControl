@@ -1,8 +1,7 @@
 package com.example.demo.services;
 
-import com.example.demo.DTO.FarmDTO;
+
 import com.example.demo.DTO.FarmWorkerDTO;
-import com.example.demo.DTO.OwnerDTO;
 import com.example.demo.models.FarmWorker;
 import com.example.demo.repositories.FarmWorkerRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -35,7 +34,16 @@ public class FarmWorkerServiceImplDTO implements FarmWorkerServiceDTO {
 
     @Override
     public FarmWorkerDTO createFarmWorker(FarmWorkerDTO farmWorkerDTO) {
-        FarmWorker worker = new FarmWorker();
+        if (farmWorkerDTO.getName() == null || farmWorkerDTO.getName().isEmpty()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacío.");
+        }
+        if (farmWorkerDTO.getPhoneNumber() == null || farmWorkerDTO.getPhoneNumber().isEmpty()) {
+            throw new IllegalArgumentException("El teléfono no puede estar vacío.");
+        }
+        if (farmWorkerDTO.getEmail() == null || farmWorkerDTO.getEmail().isEmpty()) {
+            throw new IllegalArgumentException("El email no puede estar vacío.");
+        }
+       FarmWorker worker = new FarmWorker();
         worker.setName(farmWorkerDTO.getName());
         worker.setPhoneNumber(farmWorkerDTO.getPhoneNumber());
         worker.setEmail(farmWorkerDTO.getEmail());
