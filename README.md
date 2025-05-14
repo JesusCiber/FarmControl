@@ -63,7 +63,7 @@ spring.datasource.password="your_password"
 
 
 ### 🔗 Extra links
-- https://trello.com/b/QghTZVR0/farmcontrol
+- https://trello.com/invite/b/681a11e261f31492554bbb80/ATTIb2993179848a86818dfab45eaa2ff51d271BEBBF/farmcontrol
 - https://docs.google.com/presentation/d/1ZT9yCUeY0hcL-Ds6z3GZyp0ncOYquGTEpUwNwGFN9rg/edit?usp=sharing
 
 ### 🔮 Future Work
